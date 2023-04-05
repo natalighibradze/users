@@ -1,0 +1,54 @@
+const UsersPage = () => {
+  return (
+    <div>
+      { /* Some Code Here */ }
+    </div>
+  );
+}
+
+const Navigation = () => {
+  return (
+    <div>
+      { /* Other Code Here */ }
+      <UsersPage />
+    </div>
+  )
+}
+.....................
+ const UsersPage = () => {
+    return(
+      <div>
+        <h1>User Page</h1>
+        <p>Username: {userInfo.username}</p>
+        <p>Email: {userInfo.email}</p>
+        <p>First Name: {userInfo.firstName}</p>
+        <p>Last Name: {userInfo.lastName}</p>
+        <p>Gender: {userInfo.gender}</p>
+      </div>
+    )
+  }
+  ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+  
+const Navigation = () => {
+  const { productQuantity: cartSize, handleChangeTheme } = useStore();
+  const userInfo = {
+    "id": 15,
+    "username": "kminchelle",
+    "email": "kminchelle@qq.com",
+    "firstName": "Jeanne",
+    "lastName": "Halvorson",
+    "gender": "female",
+    "image": "https://robohash.org/autquiaut.png?size=50x50&set=set1"
+  }
+/////////
+import React from 'react';
+
+const UsersPage = () => {
+  return (
+    <div>
+      // some content here
+    </div>
+  )
+}
+
+export default UsersPage;
