@@ -48,7 +48,6 @@ function App() {
       <Routes>
         <Route path="/*" element={<ProtectedRoute />} />
         <Route path="/login" element={<Login />} />
-        {/* დავამატე ახალი ლინკი რომელიც არენდერებ უსზერის პროფილის გვერდს  */}
         <Route path="/profile" element={<UserPage />} />
       </Routes>
     </>
