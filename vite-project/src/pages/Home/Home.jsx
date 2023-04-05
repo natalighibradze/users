@@ -9,6 +9,7 @@ import CardItem from '../../components/Card';
 
 function Home() {
   const [products, setProducts] = useState([]);
+  
 
   // const { handleChangeTheme } = useContext(StoreContext);
 
