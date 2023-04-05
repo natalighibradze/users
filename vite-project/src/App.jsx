@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import Product from './pages/Product';
 import Cart from './pages/Cart';
 import Login from './pages/Login';
+import UserPage from './pages/User/UserPage';
 import { useStore } from './store/StoreContext';
 
 import { isUserAuthenticated } from './helpers/auth';
@@ -25,14 +26,14 @@ const ProtectedRoute = () => {
   );
 };
 function App() {
-  const [token, setToken] = useState(null)
+  const [token, setToken] = useState(null);
 
-useEffect(() => {
-  if(isUserAuthenticated()) {
-    const token = localStorage.getItem('token');
-    setToken(token)
-  }
-}, [token])
+  useEffect(() => {
+    if (isUserAuthenticated()) {
+      const token = localStorage.getItem('token');
+      setToken(token);
+    }
+  }, [token]);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -47,6 +48,8 @@ useEffect(() => {
       <Routes>
         <Route path="/*" element={<ProtectedRoute />} />
         <Route path="/login" element={<Login />} />
+        {/* დავამატე ახალი ლინკი რომელიც არენდერებ უსზერის პროფილის გვერდს  */}
+        <Route path="/profile" element={<UserPage />} />
       </Routes>
     </>
   );
