@@ -9,6 +9,7 @@ export const useStore = () => useContext(StoreContext);
 const StoreProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
   const [themeMode, setThemeMode] = useState('light');
+  const [searchedProducts, setSearchedProducts] = useState([]);
 
   const handleAddProductsToCart = (product) => {
     // onAddItemsToCart((prev) => {
@@ -81,6 +82,8 @@ const StoreProvider = ({ children }) => {
     productQuantity,
     handleChangeTheme,
     theme,
+    searchedProducts,
+    setSearchedProducts,
   };
 
   return (

@@ -4,11 +4,12 @@ import axios from 'axios';
 import { Typography } from '@mui/material';
 
 import './Home.scss';
-import { StoreContext } from '../../store/StoreContext';
+import { useStore } from "../../store/StoreContext";
 import CardItem from '../../components/Card';
 
 function Home() {
   const [products, setProducts] = useState([]);
+  const { searchedProducts } = useStore();
   
 
   // const { handleChangeTheme } = useContext(StoreContext);
@@ -56,7 +57,18 @@ function Home() {
 
     getUsers();
   }, []);
-  return (
+  return searchedProducts.length > 0 ? (
+    <div className="prouct__card--wrapper">
+      {searchedProducts.map((product) => {
+        return (
+          <CardItem
+            product={product}
+            key={product.id}
+          />
+        );
+      })}
+    </div>
+  ) : (
     <>
       <div className="flex-wrap">
         {products.map((product) => {
@@ -69,12 +81,12 @@ function Home() {
               product={product}
               handleDeleteProduct={handleDeleteProduct}
               onUpdateProduct={handleUpdateProduct}
+              // onAddItemsToCart={onAddItemsToCart}
             />
           );
         })}
       </div>
     </>
   );
-}
-
+      }
 export default Home;
